@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+About | Prime Pack Solutions
+</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+
+--mint:#bff6e4;
+
+--mint-light:#eefdf8;
+
+--blue:#d9f2ff;
+
+--pink:#ffe5ef;
+
+--white:#ffffff;
+
+--text:#243447;
+
+--gray:#667085;
+
+--shadow:
+0 18px 45px rgba(20,40,70,.08);
+
+}
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:Poppins,sans-serif;
+
+color:var(--text);
+
+background:
+
+linear-gradient(
+135deg,
+#bff6e4 0%,
+#eefdf8 35%,
+#ffffff 70%,
+#d9f2ff 100%);
+
+overflow-x:hidden;
+
+}
+
+.container{
+
+max-width:1300px;
+
+margin:auto;
+
+padding:0 30px;
+
+}
+
+/* Navigation */
+
+nav{
+
+position:fixed;
+
+top:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:92%;
+
+height:72px;
+
+background:rgba(255,255,255,.65);
+
+backdrop-filter:blur(18px);
+
+border-radius:60px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 35px;
+
+box-shadow:var(--shadow);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-family:'Playfair Display',serif;
+
+font-weight:bold;
+
+}
+
+.logo span{
+
+color:#4ba9d8;
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+gap:35px;
+
+}
+
+nav ul li a{
+
+text-decoration:none;
+
+color:#455468;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+color:#4ba9d8;
+
+}
+
+.quote-btn{
+
+padding:13px 30px;
+
+border-radius:50px;
+
+background:
+
+linear-gradient(
+135deg,
+#8fe7d2,
+#8fd9ff);
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+}
+
+/* Hero */
+
+.hero{
+
+min-height:100vh;
+
+display:grid;
+
+grid-template-columns:1.1fr .9fr;
+
+align-items:center;
+
+gap:80px;
+
+padding-top:120px;
+
+}
+
+.hero h5{
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+color:#59b7c6;
+
+margin-bottom:18px;
+
+}
+
+.hero h1{
+
+font-family:'Playfair Display',serif;
+
+font-size:68px;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#667085;
+
+margin-bottom:35px;
+
+}
+
+.hero-image{
+
+position:relative;
+
+}
+
+.hero-image img{
+
+width:100%;
+
+border-radius:30px;
+
+box-shadow:var(--shadow);
+
+}
+
+.floating-card{
+
+position:absolute;
+
+bottom:-30px;
+
+left:-30px;
+
+background:white;
+
+padding:25px;
+
+border-radius:24px;
+
+box-shadow:var(--shadow);
+
+max-width:250px;
+
+}
+
+.floating-card h3{
+
+font-size:18px;
+
+margin-bottom:10px;
+
+}
+
+.floating-card p{
+
+font-size:14px;
+
+color:#667085;
+
+margin:0;
+
+}
+
+/* Story */
+
+.story{
+
+padding:120px 0;
+
+}
+
+.story-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.story img{
+
+width:100%;
+
+border-radius:30px;
+
+box-shadow:var(--shadow);
+
+}
+
+.story h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:52px;
+
+margin-bottom:25px;
+
+}
+
+.story p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#667085;
+
+margin-bottom:25px;
+
+}
+
+@media(max-width:900px){
+
+.hero,
+.story-grid{
+
+grid-template-columns:1fr;
+
+}
+
+nav ul{
+
+display:none;
+
+}
+
+.hero h1{
+
+font-size:44px;
+
+}
+
+.story h2{
+
+font-size:40px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+Prime <span>Pack</span>
+
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="gallery.html">Gallery</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+<a href="contact.html" class="quote-btn">
+
+Request Quote
+
+</a>
+
+</nav>
+
+<section class="hero container">
+
+<div>
+
+<h5>
+
+Who We Are
+
+</h5>
+
+<h1>
+
+Packaging
+
+Crafted
+
+To
+
+Elevate
+
+Brands
+
+</h1>
+
+<p>
+
+Prime Pack Solutions specializes in premium paper bags, luxury gift boxes,
+bakery packaging, cake boxes, food packaging and fully customized printed
+packaging solutions. Our mission is to help businesses present their products
+with packaging that is both functional and memorable.
+
+</p>
+
+<a href="contact.html" class="quote-btn">
+
+Let's Work Together
+
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="images/PP_Bags_6.jpeg">
+
+<div class="floating-card">
+
+<h3>
+
+Premium Packaging
+
+</h3>
+
+<p>
+
+Designed with quality,
+crafted with precision,
+and delivered with care.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="story">
+
+<div class="container">
+
+<div class="story-grid">
+
+<div>
+
+<img src="images/PP_CakeBox_3.jpeg">
+
+</div>
+
+<div>
+
+<h2>
+
+Our Story
+
+</h2>
+
+<p>
+
+Prime Pack Solutions was founded with a vision to redefine product packaging
+through innovative designs, premium materials, and exceptional craftsmanship.
+We believe packaging is more than just protection—it is the first impression
+of your brand.
+
+</p>
+
+<p>
+
+From luxury shopping bags and elegant gift boxes to food and bakery packaging,
+we collaborate with businesses across industries to create packaging that
+enhances customer experience and builds lasting brand value.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+MISSION • VISION • VALUES
+========================================== -->
+
+<section class="mission-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>OUR PURPOSE</span>
+
+<h2>Driven by Quality.<br>Inspired by Innovation.</h2>
+
+<p>
+Every packaging solution we manufacture is designed to
+protect products, enhance presentation, and strengthen
+our customers' brand identity.
+</p>
+
+</div>
+
+<div class="mission-grid">
+
+<div class="mission-card">
+
+<div class="icon-box">🎯</div>
+
+<h3>Our Mission</h3>
+
+<p>
+
+To deliver innovative,
+high-quality,
+and sustainable packaging solutions
+that help businesses create memorable customer experiences.
+
+</p>
+
+</div>
+
+<div class="mission-card">
+
+<div class="icon-box">🚀</div>
+
+<h3>Our Vision</h3>
+
+<p>
+
+To become one of India's most trusted
+premium packaging manufacturers
+known for creativity,
+quality,
+and customer satisfaction.
+
+</p>
+
+</div>
+
+<div class="mission-card">
+
+<div class="icon-box">💚</div>
+
+<h3>Our Values</h3>
+
+<p>
+
+Integrity,
+innovation,
+quality,
+customer focus
+and environmentally responsible manufacturing.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.mission-section{
+
+padding:120px 0;
+
+background:#fbfffd;
+
+}
+
+.section-heading{
+
+max-width:760px;
+
+margin:auto auto 70px;
+
+text-align:center;
+
+}
+
+.section-heading span{
+
+letter-spacing:3px;
+
+font-size:14px;
+
+font-weight:600;
+
+color:#5bb9b5;
+
+}
+
+.section-heading h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:54px;
+
+margin:18px 0;
+
+line-height:1.2;
+
+}
+
+.section-heading p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#667085;
+
+}
+
+.mission-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:35px;
+
+}
+
+.mission-card{
+
+background:white;
+
+padding:45px;
+
+border-radius:30px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.06);
+
+transition:.35s;
+
+}
+
+.mission-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.icon-box{
+
+width:80px;
+
+height:80px;
+
+border-radius:22px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:34px;
+
+background:linear-gradient(
+135deg,
+#bff6e4,
+#d9f2ff);
+
+margin-bottom:28px;
+
+}
+
+.mission-card h3{
+
+font-family:'Playfair Display';
+
+font-size:30px;
+
+margin-bottom:18px;
+
+}
+
+.mission-card p{
+
+line-height:1.9;
+
+color:#667085;
+
+}
+
+</style>
+
+<!-- ==========================================
+WHY PRIME PACK
+========================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="story-grid">
+
+<div>
+
+<h2>
+
+Why Businesses Choose Prime Pack
+
+</h2>
+
+<p>
+
+We combine premium materials,
+modern printing technology,
+and experienced craftsmanship
+to manufacture packaging
+that enhances your brand image.
+
+</p>
+
+<p>
+
+From small custom orders to large-scale production,
+our focus remains on quality,
+timely delivery,
+and customer satisfaction.
+
+</p>
+
+<div class="points">
+
+<div>✔ Premium Printing Quality</div>
+
+<div>✔ Custom Sizes & Designs</div>
+
+<div>✔ Eco-Friendly Materials</div>
+
+<div>✔ Fast Turnaround Time</div>
+
+<div>✔ Competitive Pricing</div>
+
+<div>✔ PAN India Delivery</div>
+
+</div>
+
+</div>
+
+<div>
+
+<img src="images/PP_Bags_5.jpeg">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.points{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:18px;
+
+margin-top:35px;
+
+}
+
+.points div{
+
+background:white;
+
+padding:18px;
+
+border-radius:18px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+font-weight:500;
+
+}
+
+@media(max-width:768px){
+
+.points{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+<!-- ==========================================
+STATISTICS
+========================================== -->
+
+<section
+style="
+background:
+linear-gradient(
+135deg,
+#bff6e4,
+#eefdf8,
+#d9f2ff);
+padding:100px 0;
+">
+
+<div class="container">
+
+<div class="stats">
+
+<div>
+
+<h2>500+</h2>
+
+<p>Happy Clients</p>
+
+</div>
+
+<div>
+
+<h2>1000+</h2>
+
+<p>Packaging Designs</p>
+
+</div>
+
+<div>
+
+<h2>15+</h2>
+
+<p>Years Experience</p>
+
+</div>
+
+<div>
+
+<h2>100%</h2>
+
+<p>Quality Commitment</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+text-align:center;
+
+gap:40px;
+
+}
+
+.stats h2{
+
+font-family:'Playfair Display';
+
+font-size:64px;
+
+color:#2f6175;
+
+}
+
+.stats p{
+
+margin-top:10px;
+
+font-size:20px;
+
+color:#48606f;
+
+}
+
+</style>
+
+<!-- ==========================================
+MANUFACTURING PROCESS
+========================================== -->
+
+<section class="manufacturing">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>HOW WE WORK</span>
+
+<h2>Our Manufacturing Process</h2>
+
+<p>
+Every package is produced with precision, consistency,
+and attention to detail from concept to delivery.
+</p>
+
+</div>
+
+<div class="process-grid">
+
+<div class="process-card">
+<div class="step-no">01</div>
+<h3>Consultation</h3>
+<p>
+We understand your product, dimensions, quantity and branding requirements.
+</p>
+</div>
+
+<div class="process-card">
+<div class="step-no">02</div>
+<h3>Design & Mockup</h3>
+<p>
+Our design team prepares artwork and prototypes for approval before production.
+</p>
+</div>
+
+<div class="process-card">
+<div class="step-no">03</div>
+<h3>Production</h3>
+<p>
+Printing, lamination, die-cutting, folding and finishing are carried out using premium materials.
+</p>
+</div>
+
+<div class="process-card">
+<div class="step-no">04</div>
+<h3>Quality Check</h3>
+<p>
+Each order undergoes strict quality inspection before dispatch.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.manufacturing{
+
+padding:120px 0;
+
+}
+
+.process-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+.process-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:28px;
+
+box-shadow:0 18px 45px rgba(0,0,0,.06);
+
+transition:.35s;
+
+}
+
+.process-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.step-no{
+
+width:70px;
+
+height:70px;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(135deg,#bff6e4,#d9f2ff);
+
+font-size:28px;
+
+font-weight:bold;
+
+margin-bottom:25px;
+
+}
+
+.process-card h3{
+
+font-family:'Playfair Display';
+
+font-size:28px;
+
+margin-bottom:18px;
+
+}
+
+.process-card p{
+
+line-height:1.8;
+
+color:#667085;
+
+}
+
+</style>
+
+
+
+<!-- ==========================================
+SUSTAINABILITY
+========================================== -->
+
+<section
+style="background:#fbfffd;">
+
+<div class="container">
+
+<div class="story-grid">
+
+<div>
+
+<img src="images/PP_Bags_2.jpeg" alt="Eco Friendly Packaging">
+
+</div>
+
+<div>
+
+<h2>
+
+Committed to Sustainable Packaging
+
+</h2>
+
+<p>
+
+We believe premium packaging should also be environmentally responsible.
+Wherever possible, we use recyclable and eco-conscious materials that help
+reduce environmental impact without compromising on quality.
+
+</p>
+
+<p>
+
+Our focus is to create durable, reusable and visually appealing packaging
+that supports both your business and the planet.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==========================================
+CALL TO ACTION
+========================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="cta-box">
+
+<h2>
+
+Let's Create Premium Packaging Together
+
+</h2>
+
+<p>
+
+Whether you need custom paper bags,
+gift boxes,
+cake boxes,
+or complete branding solutions,
+our team is ready to help.
+
+</p>
+
+<div class="cta-buttons">
+
+<a href="contact.html" class="primary-btn">
+
+Request a Quote
+
+</a>
+
+<a href="products.html" class="secondary-btn">
+
+View Products
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.cta-box{
+
+background:
+
+linear-gradient(
+135deg,
+#bff6e4,
+#d9f2ff);
+
+padding:70px;
+
+border-radius:40px;
+
+text-align:center;
+
+box-shadow:0 20px 60px rgba(20,40,70,.08);
+
+}
+
+.cta-box h2{
+
+font-family:'Playfair Display';
+
+font-size:50px;
+
+margin-bottom:20px;
+
+}
+
+.cta-box p{
+
+font-size:19px;
+
+line-height:1.8;
+
+max-width:700px;
+
+margin:auto auto 40px;
+
+color:#425466;
+
+}
+
+.cta-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+background:#243447;
+
+color:white;
+
+padding:15px 34px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.primary-btn:hover{
+
+background:#1a2733;
+
+}
+
+.secondary-btn{
+
+background:white;
+
+padding:15px 34px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:#243447;
+
+}
+
+.secondary-btn:hover{
+
+background:#eefdf8;
+
+}
+
+</style>
+
+
+
+<!-- ==========================================
+FOOTER
+========================================== -->
+
+<footer
+style="
+margin-top:120px;
+background:#243447;
+color:white;
+padding:80px 0 30px;
+">
+
+<div class="container">
+
+<div style="
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:50px;
+">
+
+<div>
+
+<h2
+style="
+font-family:'Playfair Display';
+font-size:34px;
+margin-bottom:20px;
+">
+
+Prime Pack Solutions
+
+</h2>
+
+<p
+style="
+line-height:1.9;
+color:#d7dee6;
+">
+
+Premium manufacturer of paper bags,
+gift boxes,
+cake boxes,
+bakery packaging,
+food packaging
+and custom printed packaging solutions.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<br>
+
+<p><a href="index.html" style="color:#d7dee6;text-decoration:none;">Home</a></p>
+
+<p><a href="products.html" style="color:#d7dee6;text-decoration:none;">Products</a></p>
+
+<p><a href="gallery.html" style="color:#d7dee6;text-decoration:none;">Gallery</a></p>
+
+<p><a href="contact.html" style="color:#d7dee6;text-decoration:none;">Contact</a></p>
+
+</div>
+
+<div>
+
+<h3>Contact</h3>
+
+<br>
+
+<p>Email:</p>
+
+<p>info@primepacksolutions.com</p>
+
+<br>
+
+<p>Phone:</p>
+
+<p>+91 XXXXX XXXXX</p>
+
+</div>
+
+</div>
+
+<hr style="
+margin:50px 0 20px;
+border:none;
+height:1px;
+background:rgba(255,255,255,.15);
+">
+
+<p style="text-align:center;color:#c8d3de;">
+
+© 2026 Prime Pack Solutions. All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+</body>
+
+</html>

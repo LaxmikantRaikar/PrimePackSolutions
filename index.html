@@ -21,7 +21,7 @@
 <section class="hero" id="home"><div class="wrap hero-grid"><div>
 <span class="eyebrow">Thoughtful packaging · Lasting impressions</span><h1>Packaging that makes your <em>brand stand out.</em></h1>
 <p class="hero-copy">Custom paper bags, cake boxes, bakery packaging, gift boxes and printed packaging solutions—created to give every product a beautiful first impression.</p>
-<div class="actions"><a class="btn primary" href="#categories">Explore Categories ↓</a><a class="btn dark" href="#contact">Talk to Our Team</a></div>
+<div class="actions"><a class="btn primary" href="#categories">Explore our range ↓</a><a class="btn dark" href="#contact">Talk to Our Team</a></div>
 <p style="margin-top:24px;color:#7b898d;font-size:.85rem">Designed around your product. Finished around your brand.</p>
 </div><div class="visual" aria-label="Packaging showcase">
 <div class="photo main-photo"><img src="paper_bags/paper_bag_6.jpeg" alt="Assorted paper bags"></div>
@@ -71,11 +71,14 @@
 <div class="contact-buttons"><a class="btn dark" href="tel:+918123286595">Call Prime Pack</a><a class="btn primary" href="https://wa.me/918123286595?text=Hello%20Prime%20Pack%20Solutions%2C%20I%20would%20like%20to%20enquire%20about%20packaging." target="_blank" rel="noopener">WhatsApp Us ↗</a></div>
 </div></div></div></section>
 
-<div class="lightbox" id="productLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Product image gallery">
- <button class="lightbox-close" type="button" aria-label="Close gallery">×</button>
- <button class="lightbox-arrow prev" type="button" aria-label="Previous image">‹</button>
- <figure class="lightbox-figure"><img id="lightboxImage" src="" alt=""><figcaption><span id="lightboxTitle"></span><span id="lightboxCount"></span></figcaption></figure>
- <button class="lightbox-arrow next" type="button" aria-label="Next image">›</button>
+<div class="product-preview" id="productPreview" aria-hidden="true" role="dialog" aria-modal="false" aria-label="Product image preview">
+ <div class="preview-card" id="previewCard">
+  <button class="lightbox-close" type="button" aria-label="Close preview">×</button>
+  <button class="lightbox-arrow prev" type="button" aria-label="Previous image">‹</button>
+  <figure class="lightbox-figure"><img id="lightboxImage" src="" alt=""><figcaption><span id="lightboxTitle"></span><span id="lightboxCount"></span></figcaption></figure>
+  <button class="lightbox-arrow next" type="button" aria-label="Next image">›</button>
+  <div class="preview-hint"><span>Use the arrows to browse images</span></div>
+ </div>
 </div>
 </main>
 <footer><div class="wrap"><div class="footer-row"><div><div class="footer-brand">Prime Pack Solutions</div><small>Packaging that makes an impression.</small></div><div class="footer-links"><a href="#home">Home</a><a href="#categories">Categories</a><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#contact">Contact</a></div></div><div class="copyright">© <span id="year"></span> Prime Pack Solutions. All rights reserved.</div></div></footer>
@@ -89,25 +92,50 @@ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entr
 document.querySelectorAll("main section[id]").forEach(s=>observer.observe(s));
 document.getElementById("year").textContent=new Date().getFullYear();
 
-// Each category opens its own folder-based image gallery. Add more files to a folder
-// and add their paths to the matching list below to include them in the slideshow.
+// Click-to-open product gallery. Hovering never opens the preview.
 const productGalleries={
  paper_bags:{title:"Paper Bags",images:["paper_bags/paper_bag_1.jpeg","paper_bags/paper_bag_2.jpeg","paper_bags/paper_bag_3.jpeg","paper_bags/paper_bag_4.jpeg","paper_bags/paper_bag_5.jpeg","paper_bags/paper_bag_6.jpeg"]},
  cake_box:{title:"Cake & Bakery Boxes",images:["cake_box/cake_box_1.jpeg","cake_box/cake_box_2.jpeg","cake_box/cake_box_3.jpeg","cake_box/cake_box_4.jpeg","cake_box/cake_box_5.jpeg"]},
  gift_box:{title:"Gift Boxes",images:["gift_box/gift_box_1.jpeg"]},
  custom_packaging:{title:"Custom Packaging",images:["custom_packaging/custom_packaging_1.jpeg","custom_packaging/custom_packaging_2.jpeg","custom_packaging/custom_packaging_3.jpeg"]}
 };
-const lightbox=document.getElementById("productLightbox"),lightboxImage=document.getElementById("lightboxImage"),lightboxTitle=document.getElementById("lightboxTitle"),lightboxCount=document.getElementById("lightboxCount");
-let activeGallery=[],activeGalleryTitle="",activeImageIndex=0,lastGalleryTrigger=null;
-function showGalleryImage(){lightboxImage.src=activeGallery[activeImageIndex];lightboxImage.alt=activeGalleryTitle+" - image "+(activeImageIndex+1);lightboxTitle.textContent=activeGalleryTitle;lightboxCount.textContent=(activeImageIndex+1)+" / "+activeGallery.length;}
-function openGallery(key,trigger){const gallery=productGalleries[key];if(!gallery)return;activeGallery=gallery.images;activeGalleryTitle=gallery.title;activeImageIndex=0;lastGalleryTrigger=trigger;showGalleryImage();lightbox.classList.add("open");lightbox.setAttribute("aria-hidden","false");document.body.classList.add("gallery-open");lightbox.querySelector(".lightbox-close").focus();}
-function closeGallery(){lightbox.classList.remove("open");lightbox.setAttribute("aria-hidden","true");document.body.classList.remove("gallery-open");if(lastGalleryTrigger)lastGalleryTrigger.focus();}
+const preview=document.getElementById("productPreview");
+const lightboxImage=document.getElementById("lightboxImage"),lightboxTitle=document.getElementById("lightboxTitle"),lightboxCount=document.getElementById("lightboxCount");
+let activeGallery=[],activeGalleryTitle="",activeImageIndex=0;
+function showGalleryImage(){
+ lightboxImage.classList.add("changing");
+ const nextSrc=activeGallery[activeImageIndex];
+ const preload=new Image();
+ preload.onload=()=>{lightboxImage.src=nextSrc;lightboxImage.alt=activeGalleryTitle+" - image "+(activeImageIndex+1);requestAnimationFrame(()=>lightboxImage.classList.remove("changing"));};
+ preload.onerror=()=>{lightboxImage.src=nextSrc;lightboxImage.classList.remove("changing");};
+ preload.src=nextSrc;
+ lightboxTitle.textContent=activeGalleryTitle;
+ lightboxCount.textContent=(activeImageIndex+1)+" / "+activeGallery.length;
+}
+function openGallery(key){
+ const gallery=productGalleries[key];if(!gallery)return;
+ activeGallery=gallery.images;activeGalleryTitle=gallery.title;activeImageIndex=0;showGalleryImage();
+ preview.classList.add("visible");preview.setAttribute("aria-hidden","false");
+ document.body.classList.add("gallery-open");
+ preview.querySelector(".lightbox-close").focus();
+}
+function closeGallery(){
+ preview.classList.remove("visible");preview.setAttribute("aria-hidden","true");
+ document.body.classList.remove("gallery-open");
+}
 function moveGallery(step){if(!activeGallery.length)return;activeImageIndex=(activeImageIndex+step+activeGallery.length)%activeGallery.length;showGalleryImage();}
-document.querySelectorAll(".category[data-gallery]").forEach(card=>card.addEventListener("click",event=>{event.preventDefault();openGallery(card.dataset.gallery,card);}));
-lightbox.querySelector(".lightbox-close").addEventListener("click",closeGallery);
-lightbox.querySelector(".prev").addEventListener("click",()=>moveGallery(-1));
-lightbox.querySelector(".next").addEventListener("click",()=>moveGallery(1));
-lightbox.addEventListener("click",event=>{if(event.target===lightbox)closeGallery();});
-document.addEventListener("keydown",event=>{if(!lightbox.classList.contains("open"))return;if(event.key==="Escape")closeGallery();if(event.key==="ArrowLeft")moveGallery(-1);if(event.key==="ArrowRight")moveGallery(1);});
+document.querySelectorAll(".category[data-gallery]").forEach(card=>{
+ card.addEventListener("click",event=>{event.preventDefault();openGallery(card.dataset.gallery);});
+});
+preview.querySelector(".lightbox-close").addEventListener("click",closeGallery);
+preview.querySelector(".prev").addEventListener("click",()=>moveGallery(-1));
+preview.querySelector(".next").addEventListener("click",()=>moveGallery(1));
+preview.addEventListener("click",event=>{if(event.target===preview)closeGallery();});
+document.addEventListener("keydown",event=>{
+ if(!preview.classList.contains("visible"))return;
+ if(event.key==="Escape")closeGallery();
+ if(event.key==="ArrowLeft")moveGallery(-1);
+ if(event.key==="ArrowRight")moveGallery(1);
+});
 </script>
 </body></html>
